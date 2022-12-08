@@ -1,4 +1,5 @@
-<%--
+<%@ page import="java.util.List" %>
+<%@ page import="com.example.webcrud.data.Product" %><%--
   Created by IntelliJ IDEA.
   User: ninhm
   Date: 11/25/2022
