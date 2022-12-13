@@ -2,6 +2,7 @@ package com.example.demo7.service.impl;
 
 import com.example.demo7.model.Customer;
 import com.example.demo7.service.CustomerService;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,6 +10,7 @@ import java.util.stream.Collectors;
 
 import static java.util.Arrays.asList;
 
+@Component
 public class SimpleCustomerServiceImpl implements CustomerService {
     private static List<Customer> customers;
     private static long autoIncreaseId = 0;

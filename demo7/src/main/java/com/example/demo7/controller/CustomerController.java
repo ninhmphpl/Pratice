@@ -2,6 +2,7 @@ package com.example.demo7.controller;
 
 import com.example.demo7.model.Customer;
 import com.example.demo7.service.CustomerService;
+import com.example.demo7.service.impl.SimpleCustomerServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,11 +14,11 @@ import java.util.List;
 @Controller
 public class CustomerController {
     @Autowired
-    private CustomerService customerService;
+    private SimpleCustomerServiceImpl simpleCustomerService;
 
     @GetMapping("/customers")
     public String showList(Model model) {
-        List<Customer> customers = customerService.findAll();
+        List<Customer> customers = simpleCustomerService.findAll();
         model.addAttribute("customers", customers);
         return "list";
     }
@@ -27,8 +28,8 @@ public class CustomerController {
         Customer customer = new Customer(name,email,address);
         Long iid = Long.valueOf(id);
         customer.setId(iid);
-        customerService.save(customer);
-        model.addAttribute("customers",customerService.findAll());
+        simpleCustomerService.save(customer);
+        model.addAttribute("customers",simpleCustomerService.findAll());
         return "list";
     }
 }

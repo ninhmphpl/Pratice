@@ -1,9 +1,9 @@
 package com.example.demo7.service;
 
 import com.example.demo7.model.Customer;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
-
 public interface CustomerService {
     List<Customer> findAll();
 
